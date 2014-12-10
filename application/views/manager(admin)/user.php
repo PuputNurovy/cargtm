@@ -12,19 +12,19 @@
     <title>Admin-Managemen User</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../aset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../../aset/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../aset/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../../aset/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>aset/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- cargtm -->
-    <link href="../../aset/css/style-cargtm.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>aset/css/style-cargtm.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="../../aset/img/logo.jpg" class="shadow" style="float:left; width:40px; margin:5px"><a class="head" href="index.php">Cargo Terminal Management</a>
+                <img src="<?php echo base_url(); ?>aset/img/logo.jpg" class="shadow" style="float:left; width:40px; margin:5px"><a class="head" href="<?php echo base_url(); ?>index.php/home">Cargo Terminal Management</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -67,19 +67,22 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url(); ?>/index.php/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a class="aktif" href="user.php"><i class="fa fa-user fa-fw"></i> Managemen User</a>
+                            <a class="aktif" href="<?php echo base_url(); ?>/index.php/user"><i class="fa fa-user fa-fw"></i> Managemen User</a>
                         </li>
                         <li>
                             <a href="backup.php"><i class="fa fa-bullhorn fa-fw"></i> Laporan<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="PersiapanAngkut.php">Persiapan Angkut</a>
+                                    <a href="<?php echo base_url(); ?>/index.php/persiapan">Persiapan Angkut</a>
                                 </li>
                                 <li>
-                                    <a href="PengambilanKargo.php">Pengambilan Kargo</a>
+                                    <a href="<?php echo base_url(); ?>/index.php/angkut">Pengambilan Kargo</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/adTaa">Transportasi dan Alat Angkut</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -88,10 +91,10 @@
                             <a href="backup.php"><i class="fa fa-cloud fa-fw"></i> Backup dan Restore<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="backup.php">Backup</a>
+                                    <a href="<?php echo base_url(); ?>/index.php/backup">Backup</a>
                                 </li>
                                 <li>
-                                    <a href="restore.php">Restore</a>
+                                    <a href="<?php echo base_url(); ?>/index.php/restore">Restore</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -108,7 +111,7 @@
             <div class="container-fluid">
                 <div class="row"><br>
                     <div class="col-lg-12">
-                        <center><p align="right">Selamat Datang <a href="index.html" class="tHijau" >manager/puput nurovy </a><button type="button" class="btn btn-primary btn-sm bHijau">Keluar</button></p></center>
+                        <center><p align="right">Selamat Datang <a href="<?php echo base_url(); ?>/index.php/home" class="tHijau" >manager/puput nurovy </a><button type="button" class="btn btn-primary btn-sm bHijau">Keluar</button></p></center>
                         <h1 class="page-header">Managemen User-Admin</h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -128,11 +131,12 @@
                                             <h4 class="modal-title" id="myModalLabel" align="left">Tambah User</h4>
                                         </div>
                                         <div class="modal-body">
+                                            <form action="<?php echo base_url();?>insertUser" method="post" id="form-insert" role="form">
                                             <table style="width: 450px">
                                                     <tr width="50px" height="40px">
                                                         <td>Jobdesk</td>
                                                         <td>
-                                                            <select class="form-control">
+                                                            <select class="form-control" id="jobdesk" name="jobdesk">
                                                                 <option>Operator Terminal</option>
                                                                 <option>Petugas Gerbang</option>
                                                                 <option>Petugas Transport dan Alat Angkut</option>
@@ -141,110 +145,26 @@
                                                     </tr>  
                                                     <tr width="50px" height="40px">
                                                         <td>Id User</td>
-                                                        <td><input class="form-control" disabled></td>
+                                                        <td><input class="form-control" required placeholder="Id User" id="idUser" name="idUser"></td>
                                                     </tr>         
                                                     <tr width="50px" height="40px">
                                                         <td>Nama User</td>
-                                                        <td><input class="form-control"></td>
+                                                        <td><input class="form-control" required placeholder="Nama User" id="namaUser" name="namaUser"></td>
                                                     </tr>       
                                                     <tr width="50px" height="40px">
                                                         <td>Email</td>
-                                                        <td><input class="form-control"></td>
+                                                        <td><input class="form-control" required placeholder="Email" id="emailUser" name="namaUser"></td>
                                                     </tr>       
                                                     <tr width="50px" height="40px">
                                                         <td>No Handphone</td>
-                                                        <td><input class="form-control"></td>
+                                                        <td><input class="form-control" required placeholder="No Handphone" id="handphone" name="handphone"></td>
                                                     </tr>         
-                                             </table>
+                                            </table>
+                                            </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Simpan</button>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                        </div>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                </div>
-                                <!-- /.modal-dialog -->
-                            </div>
-                            <!-- /.modal -->  
-                            <!-- Button trigger modal -->
-                            <button  class="btn btn-default tHijau" data-toggle="modal" data-target="#ubah"><i class="glyphicon glyphicon-pencil" ></i>
-                                ubah
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="ubah"  align="left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel" align="left">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table style="width: 450px">
-                                                    <tr width="50px" height="40px">
-                                                        <td>Jobdesk</td>
-                                                        <td>
-                                                            <select class="form-control" disabled>
-                                                                <option disabled>Operator Terminal</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>  
-                                                    <tr width="50px" height="40px">
-                                                        <td>Id User</td>
-                                                        <td><input class="form-control" disabled></td>
-                                                    </tr>         
-                                                    <tr width="50px" height="40px">
-                                                        <td>Nama User</td>
-                                                        <td><input class="form-control"></td>
-                                                    </tr>       
-                                                    <tr width="50px" height="40px">
-                                                        <td>Email</td>
-                                                        <td><input class="form-control"></td>
-                                                    </tr>       
-                                                    <tr width="50px" height="40px">
-                                                        <td>No Handphone</td>
-                                                        <td><input class="form-control"></td>
-                                                    </tr>       
-                                                    <tr width="50px" height="40px">
-                                                        <td>Status</td>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Aktif</option>
-                                                                <option>Tidak Aktif</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>  
-
-                                             </table>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Simpan</button>
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                                        </div>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                </div>
-                                <!-- /.modal-dialog -->
-                            </div>
-                            <!-- /.modal -->  
-                            <!-- Button trigger modal -->
-                            <button  class="btn btn-default tHijau" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-remove" ></i>
-                                delete
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade"  align="Center"  id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel" align="left">Hapus User</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <center>Apakah anda Yakin akan menghapus user?</center>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
@@ -263,6 +183,7 @@
                                             <th>Nama</th>
                                             <th>Job Desk</th>
                                             <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -270,19 +191,92 @@
                                             <td>1</td>
                                             <td>Mark</td>
                                             <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>                                        <tr>
-                                            <td>
-3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
+                                            <td>operator</td>
+                                            <td>                                             
+                                                <!-- Button trigger modal -->
+                                                <button  class="btn btn-default tHijau" data-toggle="modal" data-target="#ubah"><i class="glyphicon glyphicon-pencil" ></i>
+                                                </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="ubah"  align="left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title" id="myModalLabel" align="left">Modal title</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <table style="width: 450px">
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>Jobdesk</td>
+                                                                            <td>
+                                                                                <select class="form-control" disabled>
+                                                                                    <option disabled>Operator Terminal</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>  
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>Id User</td>
+                                                                            <td><input class="form-control" disabled></td>
+                                                                        </tr>         
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>Nama User</td>
+                                                                            <td><input class="form-control"></td>
+                                                                        </tr>       
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>Email</td>
+                                                                            <td><input class="form-control"></td>
+                                                                        </tr>       
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>No Handphone</td>
+                                                                            <td><input class="form-control"></td>
+                                                                        </tr>       
+                                                                        <tr width="50px" height="40px">
+                                                                            <td>Status</td>
+                                                                            <td>
+                                                                                <select class="form-control">
+                                                                                    <option>Aktif</option>
+                                                                                    <option>Tidak Aktif</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>  
+
+                                                                 </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Simpan</button>
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+                                                <!-- /.modal -->  
+                                                <!-- Button trigger modal -->
+                                                <button  class="btn btn-default tHijau" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-remove" ></i>
+                                                </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade"  align="Center"  id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title" id="myModalLabel" align="left">Hapus User</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <center>Apakah anda Yakin akan menghapus user?</center>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button>
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+                                                <!-- /.modal --> 
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -304,16 +298,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../../aset/js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../aset/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../../aset/js/plugins/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../../aset/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/sb-admin-2.js"></script>
 
     $('.tooltip-demo').tooltip({
         selector: "[data-toggle=tooltip]",

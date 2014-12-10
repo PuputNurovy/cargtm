@@ -75,8 +75,38 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="aktif" href="<?php echo base_url(); ?>index.php/taaDaftar"><i class="fa fa-list fa-fw"></i> Daftar Transportasi angkut</a>
+                            <a href="<?php echo base_url(); ?>/index.php/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>/index.php/user"><i class="fa fa-user fa-fw"></i> Managemen User</a>
+                        </li>
+                        <li class="active">
+                            <a href="application/views/manager(admin)/backup.php"><i class="fa fa-bullhorn fa-fw"></i> Laporan<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/persiapan">Persiapan Angkut</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/angkut">Pengambilan Kargo</a>
+                                </li>
+                                <li>
+                                    <a class="aktif" href="<?php echo base_url(); ?>/index.php/adTaa">Transportasi dan Alat Angkut</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        <li>
+                            <a href="backup.php"><i class="fa fa-cloud fa-fw"></i> Backup dan Restore<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/backup">Backup</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/restore">Restore</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li> 
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -96,6 +126,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"  style="height:50px" Id="bHijau">
                             Daftar Alat Transportasi dan Alat Angkut
+                            
                         </div>
                         <!-- /.panel-heading -->
                             
