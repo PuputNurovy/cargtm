@@ -12,22 +12,22 @@
     <title>Daftar Transport-TAA</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../aset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../../aset/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../aset/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../../aset/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>aset/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Morris Charts CSS -->
-    <link href="../../aset/css/plugins/morris.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>aset/css/plugins/morris.css" rel="stylesheet">
 
     <!-- cargtm -->
-    <link href="../../aset/css/style-cargtm.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>aset/css/style-cargtm.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,7 +54,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="../../aset/img/logo.jpg" class="shadow" style="float:left; width:40px; margin:5px"><a class="head" href="index.php">Cargo Terminal Management</a>
+                <img src="<?php echo base_url(); ?>aset/img/logo.jpg" class="shadow" style="float:left; width:40px; margin:5px"><a class="head" href="<?php echo base_url(); ?>index.php/taaHome">Cargo Terminal Management</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -75,7 +75,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="aktif" href="daftarTAA.php"><i class="fa fa-list fa-fw"></i> Daftar Transportasi angkut</a>
+                            <a class="aktif" href="<?php echo base_url(); ?>index.php/taaDaftar"><i class="fa fa-list fa-fw"></i> Daftar Transportasi angkut</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@
             <div class="container-fluid">
                 <div class="row">
                 <br>
-                <center><p align="right">Selamat Datang <a href="index.html" class="tHijau" >manager/puput nurovy </a><button type="button" class="btn btn-primary btn-sm bHijau">Keluar</button></p></center>
+                <center><p align="right">Selamat Datang <a href="<?php echo base_url(); ?>index.php/taaHome" class="tHijau" >manager/puput nurovy </a><button type="button" class="btn btn-primary btn-sm bHijau">Keluar</button></p></center>
                 </div>
                 <!-- /.row -->
                 <div class="col-lg-12">
@@ -459,20 +459,20 @@
 
     
     <!-- jQuery -->
-    <script src="../../aset/js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../aset/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../../aset/js/plugins/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../../aset/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/sb-admin-2.js"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="../../aset/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="../../aset/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

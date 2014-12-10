@@ -41,6 +41,28 @@
 $route['default_controller'] = "c_login";
 $route['404_override'] = '';
 
+//admin
+$route['home']="c_adminView/index";
+$route['user']="c_adminView/v_user";
+$route['persiapan']="c_adminView/v_persiapanAngkut";
+$route['angkut']="c_adminView/v_angkutKargo";
+$route['restore']="c_adminView/v_restore";
+$route['backup']="c_adminView/v_backup";
+
+//operator
+$route['opHome']="c_operatorView/index";
+$route['opDaftar']="c_operatorView/v_daftarKargoOp";
+$route['opPengambilan']="c_operatorView/v_pengambilanKargo";
+$route['opPersiapan']="c_operatorView/v_persiapanAngkut";
+
+//gerbang
+$route['gbHome']="c_gerbangView/index";
+$route['gbDaftar']="c_gerbangView/v_daftar";
+$route['gbUnknown']="c_gerbangView/v_unknown";
+
+//TAA
+$route['taaHome']="c_taaView/index";
+$route['taaDaftar']="c_taaView/v_daftarTaa";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
