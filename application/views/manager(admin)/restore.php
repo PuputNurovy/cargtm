@@ -84,6 +84,9 @@
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/pengambilan">Pengambilan Kargo</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/adTaa">Transportasi dan Alat Angkut</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li> 
@@ -94,7 +97,7 @@
                                     <a href="<?php echo base_url(); ?>index.php/backup">Backup</a>
                                 </li>
                                 <li>
-                                    <a class="restore" href="<?php echo base_url(); ?>index.php/restore">Restore</a>
+                                    <a class="aktif" class="restore" href="<?php echo base_url(); ?>index.php/restore">Restore</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

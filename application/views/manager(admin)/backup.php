@@ -84,14 +84,17 @@
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/pengambilan">Pengambilan Kargo</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/adTaa">Transportasi dan Alat Angkut</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li class="active"> 
-                        <li>
+                        </li> 
+                        <li class="active">
                             <a href="backup.php"><i class="fa fa-cloud fa-fw"></i> Backup dan Restore<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="backup" href="<?php echo base_url(); ?>index.php/backup">Backup</a>
+                                    <a class="aktif" href="<?php echo base_url(); ?>index.php/backup">Backup</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/restore">Restore</a>

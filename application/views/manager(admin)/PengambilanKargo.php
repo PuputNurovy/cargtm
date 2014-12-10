@@ -86,6 +86,9 @@
                                 <li>
                                     <a class="aktif" href="<?php echo base_url(); ?>index.php/angkut">Pengambilan Kargo</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>/index.php/adTaa">Transportasi dan Alat Angkut</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li> 

@@ -29,6 +29,9 @@ class c_adminView extends CI_Controller {
     public function v_angkutKargo() {
         $this->load->view('manager(admin)/pengambilanKargo');
     }
+    public function v_taa() {
+        $this->load->view('manager(admin)/daftarTAAad');
+    }
     
     public function v_restore() {
         $this->load->view('manager(admin)/restore');
