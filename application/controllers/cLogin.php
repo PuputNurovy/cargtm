@@ -26,7 +26,7 @@ class CLogin extends CI_Controller {
         } elseif ($this->session->userdata('opeter')) {
             redirect(base_url().'operator-terminal');
         } elseif ($this->session->userdata('petger')) {
-            redirect(base_url().'petugas-gerbang');
+            redirect(base_url().'teknisi-kargo');
         } elseif ($this->session->userdata('pettra')) {
             redirect(base_url().'petugas-transport');
         } else {
@@ -51,7 +51,7 @@ class CLogin extends CI_Controller {
             switch ($jobdesk) {
                 case 'manager'          : $this->session->set_userdata('manager', $data);$this->manager();break;
                 case 'operator terminal': $this->session->set_userdata('opeter', $data);$this->operatorTerminal();break;
-                case 'petugas gerbang'  : $this->session->set_userdata('petger', $data);$this->penjagaGerbang();break;
+                case 'teknisi kargo'  : $this->session->set_userdata('tekkar', $data);$this->teknisiKargo();break;
                 case 'petugas transport': $this->session->set_userdata('pettra', $data);$this->petugasTransport();break;
                 default: break;
             }
@@ -69,8 +69,8 @@ class CLogin extends CI_Controller {
         redirect(base_url().'operator-terminal');
     }
 
-    private function penjagaGerbang(){
-        redirect(base_url().'petugas-gerbang');
+    private function teknisiKargo(){
+        redirect(base_url().'teknisi-kargo');
     }
 
     private function petugasTransport(){
@@ -87,7 +87,7 @@ class CLogin extends CI_Controller {
         switch ($param) {
                 case 'manager'          : $name = 'manager';break;
                 case 'operator-terminal': $name = 'opeter';break;
-                case 'petugas-gerbang'  : $name = 'petger';break;
+                case 'teknisi-kargo'    : $name = 'tekkar';break;
                 case 'petugas-transport': $name = 'pettra';break;
                 default: $name = '';break;
         }

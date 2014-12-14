@@ -22,7 +22,7 @@
                                     <option value="">Pilih Jobdesk anda</option>
                                     <option value="manager">Manager</option>
                                     <option value="operator terminal">Operator Terminal</option>
-                                    <option value="petugas gerbang">Petugas Gerbang</option>
+                                    <option value="teknisi kargo">Teknisi Kargo</option>
                                     <option value="petugas transport">Transport & Alat Angkut</option>
                                 </select>
                             </div>

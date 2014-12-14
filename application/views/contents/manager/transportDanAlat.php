@@ -14,7 +14,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="tabel-transport-dan-alat">
+                                <table class="table table-striped" id="tabel">
                                     <thead>
                                         <tr>
                                             <th>ID Transportasi</th>
@@ -50,11 +50,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <script type="text/javascript">
-                                    $(function() {
-                                        $('#tabel-transport-dan-alat').dataTable();
-                                    } );
-                                </script>
                             </div>
                         </div>
                         <!-- /.panel-body -->

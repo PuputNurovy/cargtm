@@ -6,7 +6,7 @@
 
     
     <link href="<?php echo base_url();?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo  base_url()?>plugins/datatable/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
+    <link href="<?php echo  base_url()?>plugins/bootstrap/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" >
     <link href="<?php echo base_url();?>plugins/bootstrap/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>plugins/bootstrap/css/sb-admin-2.css" rel="stylesheet">
     <link href="<?php echo base_url();?>plugins/bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -19,8 +19,31 @@
     <script src="<?php echo base_url();?>plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>plugins/bootstrap/js/plugins/metisMenu/metisMenu.min.js"></script>
     <script src="<?php echo base_url();?>plugins/bootstrap/js/sb-admin-2.js"></script>
-    <script src="<?php echo  base_url()?>plugins/datatable/js/jquery.dataTables.js"></script>
+    <script src="<?php echo  base_url()?>plugins/bootstrap/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="<?php echo  base_url()?>plugins/bootstrap/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="<?php echo  base_url()?>assets/js/dialogBoxCall.js"></script>
+    <script type="text/javascript">
+            $(function() {
+                $('#tabel').dataTable({
+                        language: {
+                            "sProcessing":   "Sedang memproses...",
+                            "sLengthMenu":   "Tampilkan _MENU_ entri",
+                            "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+                            "sInfo":         "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+                            "sInfoEmpty":    "Menampilkan 0 sampai 0 dari 0 entri",
+                            "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+                            "sInfoPostFix":  "",
+                            "sSearch":       "Cari:",
+                            "sUrl":          "",
+                            "oPaginate": {
+                                "sPrevious": "Sebelumnya",
+                                "sNext":     "Selanjutnya",
+                            }
+                        }, 
 
+                    });
+            } );
+        </script>
 </head>
 
 <body>
@@ -94,13 +117,13 @@
                         </li>
                         <?php } ?>
                         <!-- 3 -->
-                        <?php if ($jobdesk=='petugas-gerbang') {?>
+                        <?php if ($jobdesk=='teknisi-kargo') {?>
                         <li>
-                            <a <?php echo ($menu==12)? 'class="aktif"': ''; ?> href="<?php echo base_url(); ?>petugas-gerbang"><i class="fa fa-table fa-fw"></i> Daftar Kargo</a>
+                            <a <?php echo ($menu==12)? 'class="aktif"': ''; ?> href="<?php echo base_url(); ?>teknisi-kargo"><i class="fa fa-table fa-fw"></i> Daftar Kargo</a>
                         </li>
-                        <li> 
-                            <a <?php echo ($menu==13)? 'class="aktif"': ''; ?> href="<?php echo base_url(); ?>petugas-gerbang/kargo-tidak-diketahui"><i class="fa fa-table fa-fw"></i> Daftar Kargo Gelap</a>
-                        </li>
+                       <!--  <li> 
+                            <a <?php //echo ($menu==13)? 'class="aktif"': ''; ?> href="<?php //echo base_url(); ?>petugas-gerbang/kargo-tidak-diketahui"><i class="fa fa-table fa-fw"></i> Daftar Kargo Gelap</a>
+                        </li> -->
                         <?php } ?>
                         <!-- 4 -->
                         <?php if ($jobdesk=='petugas-transport') {?>

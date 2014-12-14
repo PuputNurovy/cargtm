@@ -57,7 +57,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading" id="bHijau" align="right">
-                                <button  class="btn btn-default tHijau" data-toggle="modal" data-target="#tambah"><i class="glyphicon glyphicon-plus" ></i>
+                                <button  class="btn btn-default tHijau" data-toggle="modal" onclick="showTambahKargoGelap()"><i class="glyphicon glyphicon-plus" ></i>
                                     Tambah
                                 </button>  
                             </div>
@@ -70,6 +70,7 @@
                                                 <th>No</th>
                                                 <th>ID Kargo</th>
                                                 <th>Tanggal</th>
+                                                <th>Sumber Kargo</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

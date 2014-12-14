@@ -1,4 +1,4 @@
-        <div id="page-wrapper">
+		 <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -13,7 +13,7 @@
                             <div class="panel-body">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table class="table table-striped" style="font-size:14px;" id="tabel">
+                                        <table class="table table-striped" style="font-size:13.5px;" id="tabel">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -22,8 +22,8 @@
                                                     <th>Asal</th>
                                                     <th>Tujuan</th>
                                                     <th>Tgl Ambil/Angkut</th>
-                                                    <th>Transaksi</th>
-                                                    <th>Status</th>
+                                                    <th>ID Transaksi</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -34,8 +34,13 @@
                                                     <td>Bandung</td>
                                                     <td>Bandung</td>
                                                     <td>00-00-0000</td>
-                                                    <td>029409025019</td>
-                                                    <td>Keluar</td>
+                                                    <td>0000012400</td>
+                                                    <td>
+                                                        <a href="<?php echo base_url()?>teknisi-kargo/ubah-status-masuk/00122929402" class="btn btn-default tHijau" title="Kargo Masuk"><i class="glyphicon glyphicon-log-in"></i>
+                                                        </a>
+                                                        <a href="<?php echo base_url()?>teknisi-kargo/ubah-status-keluar/00122929402" class="btn btn-default tHijau" title="Kargo Keluar"><i class="glyphicon glyphicon-log-out"></i>
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -51,3 +56,4 @@
             </div>
             <!-- /.container-fluid -->
         </div>
+        

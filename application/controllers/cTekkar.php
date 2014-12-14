@@ -6,17 +6,17 @@
  */
 
 /**
- * Description of CPettra
+ * Description of CTekkar
  *
  * @author Subhan Gustiar Rosda
  */
-class CPettra extends CI_Controller {
+class CTekkar extends CI_Controller {
+  	
+  	private $jobdesk;
 
-    private $jobdesk;
-  
     function __construct() {
         parent::__construct();
-        $this->jobdesk = 'petugas-transport';
+    	$this->jobdesk = 'teknisi-kargo';
     }
 
     private function isSession($param){
@@ -28,57 +28,58 @@ class CPettra extends CI_Controller {
     }
 
     private function output($halaman, $data, $template) {
-        show("contents/pettra/$halaman", $data, $template);
+        show("contents/tekkar/$halaman", $data, $template);
     }
 
     private function toRedirect(){
-        if (!$this->isSession($this->getSessionName($this->jobdesk))) {
-            redirect(base_url().'login');
-        }
+    	if (!$this->isSession($this->getSessionName($this->jobdesk))) {
+			redirect(base_url().'login');
+		}
     }
+
 	public function index() {
-		$this->daftarTransportView();
+		$this->daftarKargoView();
 	}
 
-	public function daftarTransportView(){
-        $this->toRedirect();
-        $data['title']   = 'Daftar Transport & Alat Angkut';
+	public function daftarKargoView(){
+		$this->toRedirect();
+		$data['title']   = 'Daftar Kargo';
         $data['jobdesk'] = $this->jobdesk;
-        $data['menu']    = 14;
-        $this->output('daftarTransport',$data, 'user');	
+        $data['menu']    = 12;
+        $this->output('daftarKargo',$data, 'user');
 	}
+
+	// public function kargoTidakDiketahuiView(){
+	// 	$this->toRedirect();
+	// 	$data['title']   = 'Kargo Tidak Diketahui';
+ //        $data['jobdesk'] = $jobdesk;
+ //        $data['menu']    = 13;
+ //        $this->output('kargoTidakDiketahui',$data, 'user');
+	// }
 
 	private function getSessionName($param){
         switch ($param) {
                 case 'manager'          : $name = 'manager';break;
                 case 'operator-terminal': $name = 'opeter';break;
-                case 'teknisi-kargo'    : $name = 'tekkar';break;
+                case 'teknisi-kargo'  	: $name = 'tekkar';break;
                 case 'petugas-transport': $name = 'pettra';break;
                 default: $name = '';break;
         }
         return $name;
     }
 
-
     // Fungsi CRUD
 
-    public function tambahTransport(){
+    public function ubahStatusMasuk(){
         $this->toRedirect();
-        //kode crud
-        echo "tambah";
+        // kode crud
+        echo "ubah jadi masuk";
     }
 
-    public function ubahTransport(){
+    public function ubahStatusKeluar(){
         $this->toRedirect();
-        //kode crud
-        echo "ubah";
+        // kode crud
+        echo "ubah jadi kaluar";   
     }
-
-    public function hapusTransport(){
-        $this->toRedirect();
-        //kode crud
-        echo "hapus";
-    }
-
 }
 ?>

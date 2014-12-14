@@ -11,9 +11,12 @@
  * @author Subhan Gustiar Rosda
  */
 class CManager extends CI_Controller {
-  
+  	
+  	private $jobdesk;
+
     function __construct() {
         parent::__construct();
+    	$this->jobdesk = 'manager';
     }
 
     private function isSession($param){
@@ -28,100 +31,85 @@ class CManager extends CI_Controller {
         show("contents/manager/$halaman", $data, $template);
     }
 
+    private function toRedirect(){
+    	if (!$this->isSession($this->getSessionName($this->jobdesk))) {
+			redirect(base_url().'login');
+		}
+    }
 	public function index() {
 		$this->dasborView();
 	}
 
 	public function dasborView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Dasbor';
-	        $data['jobdesk'] = $jobdesk;
-	        $data['menu']    = 1;
-	        $this->output('dasbor',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}	
+		$this->toRedirect();
+		$data['title']   = 'Dasbor';
+        $data['jobdesk'] = $this->jobdesk;
+        $data['menu']    = 1;
+        $this->output('dasbor',$data, 'user');	
 	}
 
 	public function daftarPenggunaView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   		= 'Manajemen Pengguna';
-	        $data['jobdesk'] 		= $jobdesk;
-	        $data['menu']    		= 2;
-	        $data['dataPengguna']	= $this->mUser->getUser();
-	        $this->output('manajemenPengguna',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   		= 'Manajemen Pengguna';
+        $data['jobdesk'] 		= $this->jobdesk;
+        $data['menu']    		= 2;
+        $data['dataPengguna']	= $this->mUser->getUser();
+        $this->output('manajemenPengguna',$data, 'user');
 	}
 
 	public function persiapanAngkutView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Laporan - Persiapan Angkut';
-	        $data['jobdesk'] = $jobdesk;
-	        $data['menu']    = 3;
-	        $this->output('persiapanAngkut',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   = 'Laporan - Persiapan Angkut';
+        $data['jobdesk'] = $this->jobdesk;
+        $data['menu']    = 3;
+        $this->output('persiapanAngkut',$data, 'user');
 	}
 
 	public function pengambilanKargoView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Laporan - Pengambilan Kargo';
-	        $data['jobdesk'] = $jobdesk;
-	        $data['menu']    = 4;
-	        $this->output('pengambilanKargo',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   = 'Laporan - Pengambilan Kargo';
+        $data['jobdesk'] = $this->jobdesk;
+        $data['menu']    = 4;
+        $this->output('pengambilanKargo',$data, 'user');
 	}
 
 	public function transportDanAlatView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Laporan - Transport dan Alat';
-	        $data['jobdesk'] = $jobdesk;
-	        $data['menu']    = 5;
-	        $this->output('transportDanAlat',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   = 'Laporan - Transport dan Alat';
+        $data['jobdesk'] = $this->jobdesk;
+        $data['menu']    = 5;
+        $this->output('transportDanAlat',$data, 'user');
 	}
 
 	public function backupView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Backup dan Restore Database - Backup';
-	        $data['jobdesk'] = $jobdesk;
-	        $data['menu']    = 6;
-	        $this->output('backup',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   = 'Backup dan Restore Database - Backup';
+        $data['jobdesk'] = $this->jobdesk;
+        $data['menu']    = 6;
+        $this->output('backup',$data, 'user');
 	}
 
 	public function restoreView(){
-		$jobdesk  = 'manager';
-		if ($this->isSession($this->getSessionName($jobdesk))) {
-			$data['title']   = 'Backup dan Restore Database - Restore';
-	        $data['jobdesk'] = $jobdesk;
-	       	$data['menu']    = 7;
-	        $this->output('restore',$data, 'user');
-		} else {
-			redirect(base_url().'login');
-		}
+		$this->toRedirect();
+		$data['title']   = 'Backup dan Restore Database - Restore';
+        $data['jobdesk'] = $this->jobdesk;
+       	$data['menu']    = 7;
+        $this->output('restore',$data, 'user');
+	}
+
+	public function pengaturanView(){
+		$this->toRedirect();
+		$data['title']   = 'Pengaturan';
+        $data['jobdesk'] = $this->jobdesk;
+       	$data['menu']    = 8;
+        $this->output('pengaturan',$data, 'user');
 	}
 
 	private function getSessionName($param){
         switch ($param) {
                 case 'manager'          : $name = 'manager';break;
                 case 'operator-terminal': $name = 'opeter';break;
-                case 'petugas-gerbang'  : $name = 'petger';break;
+                case 'teknisi-kargo'  	: $name = 'tekkar';break;
                 case 'petugas-transport': $name = 'pettra';break;
                 default: $name = '';break;
         }
@@ -133,6 +121,7 @@ class CManager extends CI_Controller {
 	*/
 
 	public function tambahPengguna(){
+		$this->toRedirect();
 		$nama 	   = $this->input->post('nama');
 		$nama      = ucwords(strtolower($nama));
 		$namaAkun  = $this->input->post('namaAkun');

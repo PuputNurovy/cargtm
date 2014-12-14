@@ -121,7 +121,7 @@
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped" id="tabel-pengguna">
+                                    <table class="table table-striped" id="tabel">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -157,11 +157,6 @@
                                          ?>
                                         </tbody>
                                     </table>
-                                    <script type="text/javascript">
-                                        $(function() {
-                                            $('#tabel-pengguna').dataTable({ "columnDefs": [{ "orderable": false, "targets": 4 } ] });
-                                        } );
-                                    </script>
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>

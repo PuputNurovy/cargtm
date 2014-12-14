@@ -39,12 +39,12 @@
 */
 
 $route['default_controller'] = "CDefault";
-$route['404_override'] = '';
+$route['404_override'] = 'CDefault/errorView';
 /**
  * ----------------------ROUTER VIEW---------------------------------
  */
 
-//admin
+//manager
 $route['manager']="CManager";
 $route['manager/manajemen-pengguna']="CManager/daftarPenggunaView";
 $route['manager/laporan/persiapan-angkut']="CManager/persiapanAngkutView";
@@ -52,23 +52,27 @@ $route['manager/laporan/pengambilan-kargo']="CManager/pengambilanKargoView";
 $route['manager/laporan/transport-dan-alat']="CManager/transportDanAlatView";
 $route['manager/backup-dan-restore/backup']="CManager/backupView";
 $route['manager/backup-dan-restore/restore']="CManager/restoreView";
+$route['manager/pengaturan']="CManager/pengaturanView";
 
 
 //operator
 $route['operator-terminal']="COperator";
 $route['operator-terminal/persiapan-angkut']="COperator/persiapanAngkutView";
 $route['operator-terminal/pengambilan-kargo']="COperator/pengambilanKargoView";
+$route['operator-terminal/rincian-transaksi-persiapan/(:num)']="COperator/rincianPersiapanView";
+$route['operator-terminal/rincian-transaksi-pengambilan/(:num)']="COperator/rincianPengambilanView";
 
-//gerbang
-$route['petugas-gerbang']="CPetger";
-$route['petugas-gerbang/kargo-tidak-diketahui']="CPetger/kargoTidakDiketahuiView";
+//teknisi
+$route['teknisi-kargo']="CTekkar";
+// $route['petugas-gerbang/kargo-tidak-diketahui']="CPetger/kargoTidakDiketahuiView";
 
-//TAA
+//transport
 $route['petugas-transport']="CPettra";
 
 //-----------------------------
 
 $route['(:any)/profile'] = "CDefault/profile";
+$route['(:any)/ubah-profile'] = "CDefault/ubahProfile";
 
 
 /**
@@ -81,13 +85,32 @@ $route['login']         = "CLogin";
 $route['autentikasi']   = "CLogin/autentikasi";
 $route['(:any)/logout'] = "CLogin/hapusSesi";
 
-//ADMIN
+//manager
 $route['manager/tambah-pengguna']="CManager/tambahPengguna";
-//GERBANG
 
-//OPERATOR
+//teknisi
+$route['teknisi-kargo/ubah-status-masuk/(:num)']="CTekkar/ubahStatusMasuk";
+$route['teknisi-kargo/ubah-status-keluar/(:num)']="CTekkar/ubahStatusKeluar";
 
-//TAA
+//operator
+$route['operator-terminal/tambah-pengambilan']="COperator/tambahPengambilan";
+$route['operator-terminal/ubah-pengambilan']="COperator/ubahPengambilan";
+$route['operator-terminal/hapus-pengambilan']="COperator/hapusPengambilan";
+$route['operator-terminal/tambah-rincian-pengambilan']="COperator/tambahRincianPengambilan";
+$route['operator-terminal/ubah-rincian-pengambilan']="COperator/ubahRincianPengambilan";
+$route['operator-terminal/hapus-rincian-pengambilan']="COperator/hapusRincianPengambilan";
+
+$route['operator-terminal/tambah-angkut']="COperator/tambahAngkut";
+$route['operator-terminal/ubah-angkut']="COperator/ubahAngkut";
+$route['operator-terminal/hapus-angkut']="COperator/hapusAngkut";
+$route['operator-terminal/tambah-rincian-angkut']="COperator/tambahRincianAngkut";
+$route['operator-terminal/ubah-rincian-angkut']="COperator/ubahRincianAngkut";
+$route['operator-terminal/hapus-rincian-angkut']="COperator/hapusRincianAngkut";
+
+//transport
+$route['petugas-transport/tambah-transport']="CPettra/tambahTransport";
+$route['petugas-transport/ubah-transport']="CPettra/ubahTransport";
+$route['petugas-transport/hapus-transport']="CPettra/hapusTransport";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

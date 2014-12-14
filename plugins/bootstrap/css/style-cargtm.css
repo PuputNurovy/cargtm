@@ -41,8 +41,8 @@ box-shadow: 5px 5px 7px #222;
 -webkit-box-shadow: 5px 5px 7px #222;
 }
 .aktif{
-    background: #a9cd49;
-    color: white;
+    background: #a9cd49!important;
+    color: white!important;
 }
 
 .clear{
@@ -60,4 +60,9 @@ table.dataTable thead th {
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
   border-top: 1px solid #a9cd49!important;
+}
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+  background: #a9cd49!important;
+  border-color: #a9cd49!important;
 }

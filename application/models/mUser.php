@@ -33,4 +33,12 @@ class MUser extends CI_Model {
 		}
 		return $this->db->query($query)->result();
 	}
+
+	public function getView($param=''){
+		$query = "SELECT * FROM user";
+		if ($param!='') {
+			$query = "SELECT * FROM user WHERE ".$param;
+		}
+		return $this->db->query($query)->result();
+	}
 }

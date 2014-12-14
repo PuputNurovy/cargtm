@@ -15,7 +15,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="tabel-pengambilan-kargo">
+                                <table class="table table-striped" id="tabel">
                                     <thead>
                                         <tr>
                                             <center>
@@ -38,11 +38,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <script type="text/javascript">
-                                    $(function() {
-                                        $('#tabel-pengambilan-kargo').dataTable({ "columnDefs": [{ "orderable": false, "targets": 2 } ] });
-                                    } );
-                                </script>
                             </div>
                         </div>
                         <!-- /.panel-body -->
